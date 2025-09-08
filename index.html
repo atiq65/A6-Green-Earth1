@@ -98,6 +98,123 @@
         <img src="./assets/hero-leaf2.png" alt="" />
       </div>
     </section>
+    <section
+      id="trees"
+      class="container mx-auto px-6 py-12 grid lg:grid-cols-4 gap-6"
+    >
+      <!-- Categories -->
+      <aside>
+        <h3 class="font-bold mb-4">Categories</h3>
+        <div id="categoryList" class="flex flex-col gap-2"></div>
+        <ul id="category-list" class="space-y-2">
+          <li class="cursor-pointer hover:bg-[#15803d] py-2 pl-3 rounded-md">
+            Fruit Trees
+          </li>
+          <li class="cursor-pointer hover:bg-[#15803d] py-2 pl-3 rounded-md">
+            Flowering Trees
+          </li>
+          <li class="cursor-pointer hover:bg-[#15803d] py-2 pl-3 rounded-md">
+            Shade Trees
+          </li>
+          <li class="cursor-pointer hover:bg-[#15803d] py-2 pl-3 rounded-md">
+            Medicinal Trees
+          </li>
+          <li class="cursor-pointer hover:bg-[#15803d] py-2 pl-3 rounded-md">
+            Timber Trees
+          </li>
+          <li class="cursor-pointer hover:bg-[#15803d] py-2 pl-3 rounded-md">
+            Evergreen Trees
+          </li>
+          <li class="cursor-pointer hover:bg-[#15803d] py-2 pl-3 rounded-md">
+            Ornamental Trees
+          </li>
+          <li class="cursor-pointer hover:bg-[#15803d] py-2 pl-3 rounded-md">
+            Bamboo Trees
+          </li>
+          <li class="cursor-pointer hover:bg-[#15803d] py-2 pl-3 rounded-md">
+            Climbers Trees
+          </li>
+          <li class="cursor-pointer hover:bg-[#15803d] py-2 pl-3 rounded-md">
+            Aquatic Trees
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Tree Grid -->
+      <main class="lg:col-span-2">
+        <div>
+          <h2 class="text-xl font-semibold text-center">Your Cart</h2>
+        </div>
+        <div id="loader" class="hidden text-center mb-4">
+          <span class="loading loading-spinner loading-md"></span>
+        </div>
+        <div id="grid" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+        <p id="emptyState" class="hidden text-center opacity-70 py-6">
+          No trees found.
+        </p>
+      </main>
+
+      <!-- Cart -->
+      <aside>
+        <div class="bg-white rounded-lg shadow p-4">
+          <h3 class="font-bold mb-3">Your Cart</h3>
+          <ul id="cartList" class="space-y-2 max-h-64 overflow-auto"></ul>
+          <div class="flex justify-between items-center font-semibold mt-4">
+            <span>Total:</span>
+            <span id="cartTotal">৳0.00</span>
+          </div>
+          <button
+            id="checkoutBtn"
+            disabled
+            class="w-full mt-3 px-4 py-2 rounded font-semibold"
+          ></button>
+        </div>
+      </aside>
+    </section>
+    <!--  ABOUT -->
+    <section>
+      <h2 class="text-3xl font-bold text-center">About the Campaign</h2>
+      <div
+        id="about"
+        class="container mx-auto px-6 py-12 grid md:grid-cols-2 gap-6 items-center"
+      >
+        <div>
+          <img src="./assets/about.png" class="rounded-xl shadow" />
+        </div>
+        <div>
+          <p class="mb-5 text-base font-normal">
+            We are committed to reforesting degraded lands and urban spaces.
+            Every tree planted improves biodiversity, reduces carbon footprint,
+            and strengthens communities.
+          </p>
+          <ul class="list-disc pl-6 text-gray-700">
+            <li>Community-driven projects</li>
+            <li>Transparent reporting</li>
+            <li>Long-term tree care</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPACT -->
+    <section class="bg-[#D8F3DC] py-12">
+      <h2 class="text-3xl font-semibold text-center my-10">Our Impact</h2>
+      <div class="container mx-auto px-6 grid md:grid-cols-3 gap-6 text-center">
+        <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="text-2xl font-bold text-[#15803D]">500K+</h3>
+          <p>Trees Planted</p>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="text-2xl font-bold text-[#15803D]">120+</h3>
+          <p>Communities Involved</p>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="text-2xl font-bold text-[#15803D]">30+</h3>
+          <p>Countries Reached</p>
+        </div>
+      </div>
+    </section>
+
     <script src="./script.js"></script>
   </body>
 </html>
