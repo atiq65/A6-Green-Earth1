@@ -1,1 +1,3 @@
-console.log("Atiq VAi");
+const els = {
+  categoryList: document.getElementById("categoryList"),
+};

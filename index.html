@@ -98,6 +98,7 @@
         <img src="./assets/hero-leaf2.png" alt="" />
       </div>
     </section>
+    <!--CART SECTION-->
     <section
       id="trees"
       class="container mx-auto px-6 py-12 grid lg:grid-cols-4 gap-6"
@@ -106,71 +107,7 @@
       <aside>
         <h3 class="font-bold mb-4">Categories</h3>
         <div id="categoryList" class="flex flex-col gap-2"></div>
-        <ul id="category-list" class="space-y-2">
-          <li class="cursor-pointer hover:bg-[#15803d] py-2 pl-3 rounded-md">
-            Fruit Trees
-          </li>
-          <li class="cursor-pointer hover:bg-[#15803d] py-2 pl-3 rounded-md">
-            Flowering Trees
-          </li>
-          <li class="cursor-pointer hover:bg-[#15803d] py-2 pl-3 rounded-md">
-            Shade Trees
-          </li>
-          <li class="cursor-pointer hover:bg-[#15803d] py-2 pl-3 rounded-md">
-            Medicinal Trees
-          </li>
-          <li class="cursor-pointer hover:bg-[#15803d] py-2 pl-3 rounded-md">
-            Timber Trees
-          </li>
-          <li class="cursor-pointer hover:bg-[#15803d] py-2 pl-3 rounded-md">
-            Evergreen Trees
-          </li>
-          <li class="cursor-pointer hover:bg-[#15803d] py-2 pl-3 rounded-md">
-            Ornamental Trees
-          </li>
-          <li class="cursor-pointer hover:bg-[#15803d] py-2 pl-3 rounded-md">
-            Bamboo Trees
-          </li>
-          <li class="cursor-pointer hover:bg-[#15803d] py-2 pl-3 rounded-md">
-            Climbers Trees
-          </li>
-          <li class="cursor-pointer hover:bg-[#15803d] py-2 pl-3 rounded-md">
-            Aquatic Trees
-          </li>
-        </ul>
       </aside>
-
-      <!-- Tree Grid -->
-      <main class="lg:col-span-2">
-        <div>
-          <h2 class="text-xl font-semibold text-center">Your Cart</h2>
-        </div>
-        <div id="loader" class="hidden text-center mb-4">
-          <span class="loading loading-spinner loading-md"></span>
-        </div>
-        <div id="grid" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
-        <p id="emptyState" class="hidden text-center opacity-70 py-6">
-          No trees found.
-        </p>
-      </main>
-
-      <!-- Cart -->
-      <aside>
-        <div class="bg-white rounded-lg shadow p-4">
-          <h3 class="font-bold mb-3">Your Cart</h3>
-          <ul id="cartList" class="space-y-2 max-h-64 overflow-auto"></ul>
-          <div class="flex justify-between items-center font-semibold mt-4">
-            <span>Total:</span>
-            <span id="cartTotal">৳0.00</span>
-          </div>
-          <button
-            id="checkoutBtn"
-            disabled
-            class="w-full mt-3 px-4 py-2 rounded font-semibold"
-          ></button>
-        </div>
-      </aside>
-    </section>
     <!--  ABOUT -->
     <section>
       <h2 class="text-3xl font-bold text-center">About the Campaign</h2>
@@ -263,7 +200,7 @@
         </form>
       </div>
     </section>
-    <!-- FOOTER  -->
+    <!-- FOOTER SECTION -->
     <footer class="bg-[#004d00] text-white py-6 text-center text-sm">
       <p>© <span id="year"></span> Green Earth. All rights reserved.</p>
     </footer>
