@@ -85,3 +85,30 @@ function onCategory(id) {
   renderCategories();
   loadPlants(id);
 }
+// Render grid
+function renderGrid(plants) {
+  els.grid.innerHTML = "";
+  els.emptyState.classList.toggle("hidden", plants.length !== 0);
+
+  plants.forEach((p) => {
+    const div = document.createElement("div");
+    div.className = "bg-white rounded-lg shadow p-3 flex flex-col";
+    div.innerHTML = `
+      <img src="${p.image}" class="rounded mb-2 h-32 w-full object-cover"/>
+      <h4 class="font-semibold text-sm mb-1 cursor-pointer text-[#1f2937] ">${
+        p.name
+      }</h4>
+      <p class="text-xs text-gray-600 flex-grow">${p.short}</p>
+      <div class="flex justify-between items-center mt-2">
+        <p class="text-sm text-green-500">${p.category}</p>
+        <span class="text-gray-800 font-semibold">${money(p.price)}</span>
+      </div>
+      <button class="bg-green-600 text-white px-3 py-1 rounded-full w-full text-sm">Add to Cart</button>
+    `;
+
+    div.querySelector("button").onclick = () => addToCart(p);
+    div.querySelector("h4").onclick = () => showDetails(p.id);
+
+    els.grid.appendChild(div);
+  });
+}
