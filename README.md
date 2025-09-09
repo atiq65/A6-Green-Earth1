@@ -1,6 +1,5 @@
 1) What is the difference between var, let, and const?
-
-    *var
+   *var
    -Scope:Function scoped
    -Hoisting:Gets hoised to the top, initialized as undefined
    -Re-declare: Allowed the same scope
