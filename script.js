@@ -74,9 +74,7 @@ function renderCategories() {
 
 function catBtnClass(id) {
   return `px-3 py-2 rounded-md text-left ${
-    state.activeCategory === id
-      ? "bg-green-600 text-white"
-      : "bg-white hover:bg-green-100"
+    state.activeCategory === id ? "bg-green-600 text-white" : "bg-white "
   }`;
 }
 
@@ -112,3 +110,80 @@ function renderGrid(plants) {
     els.grid.appendChild(div);
   });
 }
+// Show plant details in modal
+async function showDetails(id) {
+  const res = await fetch(API.detail(id));
+  const data = await res.json();
+  const plant = data?.plant ?? data?.data;
+
+  els.modalContent.innerHTML = `
+    <h2 class="text-xl font-bold mb-3">${plant.name}</h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div>
+        <img src="${plant.image}" class="rounded-lg w-full h-48 object-cover"/>
+        ${
+          plant.images
+            ? plant.images
+                .map(
+                  (img) =>
+                    `<img src="${img}" class="rounded mt-2 w-full h-32 object-cover"/>`
+                )
+                .join("")
+            : ""
+        }
+      </div>
+      <div>
+        <p class="text-gray-700 mb-2"><strong>Category:</strong> ${
+          plant.category
+        }</p>
+        <p class="text-gray-700 mb-2"><strong>Price:</strong> ${money(
+          plant.price
+        )}</p>
+        <p class="text-gray-600 text-sm">${
+          plant.description || "No details available."
+        }</p>
+        <button class="bg-green-600 text-white px-4 py-2 mt-3 rounded">Add to Cart</button>
+      </div>
+    </div>
+  `;
+
+  els.modal.classList.remove("hidden");
+}
+
+// Close modal
+els.closeModal.onclick = () => {
+  els.modal.classList.add("hidden");
+};
+// Cart functions
+function addToCart(p) {
+  state.cart.push(p);
+  renderCart();
+}
+
+function renderCart() {
+  els.cartList.innerHTML = "";
+  let total = 0;
+  state.cart.forEach((p, i) => {
+    total += p.price;
+    const li = document.createElement("li");
+    li.className =
+      "flex justify-between items-center text-sm bg-gray-100 px-2 py-1 rounded";
+    li.innerHTML = `<span class="font-semibold text-sm">${p.name}</span>
+      <div><span>${money(p.price)}</span>
+      <button class="ml-2 text-gray-500">❌</button></div>`;
+    li.querySelector("button").onclick = () => removeFromCart(i);
+    els.cartList.appendChild(li);
+  });
+  els.cartTotal.textContent = money(total);
+}
+
+function removeFromCart(i) {
+  state.cart.splice(i, 1);
+  renderCart();
+}
+
+// Init
+(async function () {
+  await loadCategories();
+  await loadPlants("all");
+})();
