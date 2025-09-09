@@ -154,6 +154,7 @@ async function showDetails(id) {
 els.closeModal.onclick = () => {
   els.modal.classList.add("hidden");
 };
+//cart
 // Cart functions
 function addToCart(p) {
   state.cart.push(p);
