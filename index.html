@@ -108,6 +108,50 @@
         <h3 class="font-bold mb-4">Categories</h3>
         <div id="categoryList" class="flex flex-col gap-2"></div>
       </aside>
+      <!-- Tree Grid -->
+      <main class="lg:col-span-2">
+        <div id="loader" class="hidden text-center mb-4">
+          <span class="loading loading-spinner loading-md"></span>
+        </div>
+        <div id="grid" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+        <p id="emptyState" class="hidden text-center opacity-70 py-6">
+          No trees found.
+        </p>
+      </main>
+
+      <!-- Cart -->
+      <aside>
+        <div class="bg-white rounded-lg shadow p-4">
+          <h3 class="font-bold mb-3">Your Cart</h3>
+          <ul id="cartList" class="space-y-2 max-h-64 overflow-auto"></ul>
+          <div class="flex justify-between items-center font-semibold mt-4">
+            <span>Total:</span>
+            <span id="cartTotal">৳0.00</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Tree Detail Modal -->
+    <div
+      id="treeModal"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+    >
+      <div
+        class="bg-white rounded-lg shadow-lg w-11/12 md:w-2/3 lg:w-1/2 p-6 relative"
+      >
+        <button
+          id="closeModal"
+          class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-xl"
+        >
+          ✖
+        </button>
+        <div id="modalContent"></div>
+      </div>
+    </div>
+
+    <div id="toast" class="fixed bottom-4 right-4 space-y-2"></div>
+
     <!--  ABOUT -->
     <section>
       <h2 class="text-3xl font-bold text-center">About the Campaign</h2>
